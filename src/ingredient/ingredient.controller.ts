@@ -1,8 +1,8 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { IngredientService } from './ingredient.service';
 import { Serialize } from 'src/common/interceptors/serialize.interceptor';
-import { ResponseIngredientsDto } from './dto/response/response-ingredients.dto';
 import { PageQueryDto } from 'src/common/dtos/page-query.dto';
+import { ResponseIngredientsNameDto } from './dto/response/response-ingredients-name.dto';
 
 @Controller('ingredients')
 export class IngredientController {
@@ -11,7 +11,7 @@ export class IngredientController {
     ) { }
 
     @Get()
-    @Serialize(ResponseIngredientsDto)
+    @Serialize(ResponseIngredientsNameDto)
     async getIngredientsByPage(
         @Query() dto: PageQueryDto,
     ) {
