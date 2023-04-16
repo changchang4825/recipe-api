@@ -15,4 +15,11 @@ export class InformationRepository {
             .lean()
             .exec();
     }
+
+    async findByname(name: string) {
+        return await this.informationModel
+            .findOne({ name })
+            .lean()
+            .exec();
+    }
 }

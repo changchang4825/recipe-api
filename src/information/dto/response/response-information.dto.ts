@@ -2,10 +2,6 @@ import { Expose, Transform } from "class-transformer";
 
 export class ResponseInformationDto {
     @Expose()
-    @Transform(params => params.obj._id)
-    readonly _id: string;
-
-    @Expose()
     readonly recipeCode: number;
 
     @Expose()
