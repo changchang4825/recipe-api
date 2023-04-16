@@ -15,6 +15,7 @@ import { IngredientNameRepository } from './ingredient-name.repository';
         ]),
     ],
     controllers: [IngredientController],
-    providers: [IngredientService, IngredientRepository, IngredientNameRepository]
+    providers: [IngredientService, IngredientRepository, IngredientNameRepository],
+    exports: [IngredientRepository]
 })
 export class IngredientModule { }
