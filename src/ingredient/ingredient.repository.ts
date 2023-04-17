@@ -15,4 +15,18 @@ export class IngredientRepository {
             .lean()
             .exec();
     }
+
+    async findByNames(names: string[]) {
+        return await this.ingredientModel
+            .find({ name: names })
+            .lean()
+            .exec();
+    }
+
+    async findByRecipeCodes(recipeCodes: number[]) {
+        return await this.ingredientModel
+            .find({ recipeCode: recipeCodes })
+            .lean()
+            .exec();
+    }
 }
