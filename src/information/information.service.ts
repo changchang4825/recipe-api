@@ -73,9 +73,9 @@ export class InformationService {
         }
     }
 
-    async getInformation(name: string) {
+    async getInformation(recipeCode: number) {
         try {
-            const information = await this.informationRepository.findByname(name);
+            const information = await this.informationRepository.findByRecipeCode(recipeCode);
 
             if (!information) {
                 throw new NotFoundException('레시피 정보가 없습니다.');

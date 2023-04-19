@@ -16,9 +16,9 @@ export class InformationRepository {
             .exec();
     }
 
-    async findByname(name: string) {
+    async findByRecipeCode(recipeCode: number) {
         return await this.informationModel
-            .findOne({ name })
+            .findOne({ recipeCode })
             .lean()
             .exec();
     }

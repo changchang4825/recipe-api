@@ -26,11 +26,11 @@ export class InformationController {
         return await this.informationService.getInformationsByIngredientNames(query.ingredients);
     }
 
-    @Get('informations/:name')
+    @Get('informations/:recipeCode')
     @Serialize(ResponseInformationDto)
     async getInformation(
-        @Param('name') name: string,
+        @Param('recipeCode') recipeCode: number,
     ) {
-        return await this.informationService.getInformation(name);
+        return await this.informationService.getInformation(recipeCode);
     }
 }
